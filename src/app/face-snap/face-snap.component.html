@@ -1,0 +1,8 @@
+<div class="face-snap-card" >
+    <!-- <p> {{ 4346234.36|number:'1.0-1' }} </p> ce syntaxe permet de formater les nmobre a virgule -->
+    <!-- <p> {{0.354|percent}} </p>  permet de gerer les pourcentage -->
+    <p> {{ 36500.40|currency:'XOF':'code'}}  </p>
+    <h2>{{ faceSnap.title|uppercase }}</h2>
+    <p>{{ faceSnap.description }}</p>
+    <button (click)="OnViewFaceSnap()">View</button>
+</div>

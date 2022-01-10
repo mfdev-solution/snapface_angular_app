@@ -1,0 +1,17 @@
+<div class="face-snap-card" >
+    <!-- <p> {{ 4346234.36|number:'1.0-1' }} </p> ce syntaxe permet de formater les nmobre a virgule -->
+    <!-- <p> {{0.354|percent}} </p>  permet de gerer les pourcentage -->
+    <p> {{ 36500.40|currency:'XOF':'code'}}  </p>
+    <h2>{{ faceSnap.title|uppercase }}</h2>
+    <a routerLink="/faceSnaps"> Back</a>
+    <p>Mis en ligne le {{ faceSnap.createdDate| date:'d MMMM yyyy ,à HH:mm' }}</p>
+    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
+    <p>{{ faceSnap.description }}</p>
+    <p *ngIf="faceSnap.location"> Prise a {{ faceSnap.location }}</p>
+    <p  [ngClass]="{ snapped: buttonName==='Oops, un Snap!'} ">
+        <button (click)="onAddSnap()">
+            {{ buttonName }}
+        </button>
+        <span   [ngStyle]="{color:'rgb(0,'+faceSnap.snaps+',0)'}"> 🤏 {{ faceSnap.snaps }} </span> 
+    </p>
+</div>
